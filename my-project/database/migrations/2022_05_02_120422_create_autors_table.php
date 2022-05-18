@@ -15,11 +15,14 @@ class CreateAutorsTable extends Migration
     {
         Schema::create('autors', function (Blueprint $table) {
             $table->id();
+            $table->string("username");
             $table->text("descripcion");
+            $table->string("password");
+            $table->string("email");
             // pertenece a x podcasts
 
             // tiene x redes sociales
-            $table->string("link");
+            $table->string("link")->nullable();
 
             
             $table->timestamps();

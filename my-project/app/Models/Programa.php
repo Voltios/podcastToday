@@ -10,7 +10,12 @@ class Programa extends Model
     public $timestamps = false;
     use HasFactory;
 
-    public function episodios(){
+    public function episodios()
+    {
         return $this->hasMany(Episodio::class);
+    }
+    public function autores()
+    {
+        return $this->hasMany(User::class);
     }
 }

@@ -28,7 +28,6 @@
     <nav class="light" id="navbar">
         <ul class="actions nav-list-65 list">
             <li>
-
                 <a class="light" href="{{ route('home') }}"><span><i
                             class="fa-solid fa-microphone"></i></span>Descubrir</a>
             </li>
@@ -55,17 +54,18 @@
             @if (Route::has('login'))
                 <ul class="nav-list-35 list">
                     <li class="">
-                        <a href="{{ route('login') }}"><span><i class="fa-solid fa-user"></i></span></a>
+                        <a href="{{ route('login') }}"><span><i class="  fa-solid fa-user"></i></span>Iniciar sesión</a>
+                    </li>
+                    <li class="register">
+                        <a href="{{ route('register') }}"><span><i class="fa-solid fa-plus"></i></span>Registrarse</a>
                     </li>
                 </ul>
             @endif
         @else
             <ul class="nav-list-35 list">
                 <li class="">
-                    <a><span><i class="fa-solid fa-user"></i></span>Iniciar sesión</a>
-                </li>
-                <li class="register">
-                    <a><span><i class="fa-solid fa-plus"></i></span>Registrarse</a>
+                    <a href="{{ route('profile') }}"><span><i
+                                class="fa-solid fa-user"></i>{{ Auth::user()->name }}</span></a>
                 </li>
             </ul>
         @endguest
@@ -74,13 +74,18 @@
     <main>
 
         <div class="caja">
-            <img id="img" src="assets/img/aa.jpg" height="200" alt="algo">
-            <!-- <img id="img" src="assets/img/aa.jpg" height="200" alt="algo"> -->
+            @if (isset($programa))
+                <img id="img" src="{{ asset('storage/cover_' . $programa->id . '.jpg') }}" height="200" alt="algo">
+            @endif
         </div>
+
 
         @yield('inicio')
         @yield('temas')
-        
+        @yield('perfil')
+        @yield('login')
+        @yield('programa')
+
     </main>
     <footer>
 

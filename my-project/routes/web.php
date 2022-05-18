@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,13 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PagesController::class, "inicio"])->name("home");
 Route::get("home", [PagesController::class, "inicio"])->name("home");
 Route::get("autores", [PagesController::class, "autores"])->name("autores");
 Route::get("autores", [PagesController::class, "autores"])->name("autores");
+Route::get('programs/{id}', [PagesController::class, "programa"])->name('programa');
+
+Route::get("editarPerfil", [UserController::class, "editarPerfil"])->name("editarPerfil");
+
+Route::get("editarPrograma/{id}", [UserController::class, "editarPrograma"])->name("editarPrograma");
+Route::put("editarPrograma/{id}", [UserController::class, "actualizarPrograma"])->name("actualizarPrograma");
 
 
 Auth::routes();
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
