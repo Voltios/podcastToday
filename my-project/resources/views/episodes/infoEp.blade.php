@@ -13,6 +13,6 @@
             <button type="submit" class="btn editar">Editar</button>
         </form>
     @endforeach
-
+ 
     <a href="{{ route('anyadirEps', $programa->id) }}">Añadir episodio</a>
 @endsection
