@@ -16,8 +16,9 @@ class CreateEpisodiosTable extends Migration
         Schema::create('episodios', function (Blueprint $table) {
             $table->id();
 
-
+            // $table->unsignedInteger("idTemporada");
             $table->string("nombre");
+            $table->text("descripcion");
             $table->unsignedInteger("program_id");
             $table->timestamps();
         });

@@ -9,5 +9,8 @@
 <body>
     @yield('login')
     @yield('register')
+    @yield('crear')
+    @yield("editarPrograma")
+    @yield('crearEp')
 </body>
 </html>

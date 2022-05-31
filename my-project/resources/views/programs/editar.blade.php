@@ -1,4 +1,4 @@
-@extends("forms")
+@extends('forms')
 @section('editarPrograma')
     @if (session('mensaje'))
         <div class="mensaje">
@@ -18,13 +18,20 @@
     @error('descripcion')
         La descripción es obligatoria
     @enderror
+    <form action="{{ route('actualizarPrograma', $programa->id) }}" method="POST">
+        @method('PUT')
+        @csrf
+        <label for="nombre">Nombre del programa
 
-    <label for="fnombre">Nombre del programa
+            <input type="text" name="nombre" class="" value="{{ $programa->nombre }}"
+                placeholder="Nombre del programa..." autofocus>
+        </label>
+        <label for="descripcion">Descripción del programa
+            <textarea name="descripcion" cols="30" rows="10">{{ $programa->descripcion }}</textarea>
+        </label>
+        <label for="enviar">
 
-        <input type="text" name="fnombre" class="" value="{{ $programa->nombre }}"
-            placeholder="Nombre del programa..." autofocus>
-    </label>
-    <label for="fdesc">Descripción del programa
-        <textarea name="fdesc" cols="30" rows="10">{{ $programa->descripcion }}</textarea>
-    </label>
+            <button class="btn editar " type="submit"> <i class="fas fa-check"></i> Enviar</button>
+        </label>
+    </form>
 @endsection

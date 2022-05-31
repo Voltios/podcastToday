@@ -19,28 +19,32 @@ navegador.addEventListener("mouseleave", () => {
 
 
 var img = document.getElementById("img");
-img.style.display = "none";
+if (img) img.style.display = "none";
 
-img.addEventListener("load", function() {
-    let ct = new ColorThief();
-    let paleta = ct.getPalette(img);
+if (img) {
+    img.addEventListener("load", function() {
+        let ct = new ColorThief();
+        let paleta = ct.getPalette(img);
 
-    cambiaColores(paleta);
-});
+        cambiaColores(paleta);
+    });
+}
+if (img) {
 
-function cambiaColores(colores) {
-    // console.log(colores)
+    function cambiaColores(colores) {
+        // console.log(colores)
 
-    let caja1 = document.getElementById("c1");
-    let caja2 = document.getElementById("c2");
-    let caja3 = document.getElementById("c3");
+        let caja1 = document.getElementById("c1");
+        let caja2 = document.getElementById("c2");
+        let caja3 = document.getElementById("c3");
 
-    caja1.style.backgroundColor = arrayToHex(colores[0]);
-    caja2.style.backgroundColor = arrayToHex(colores[1]);
-    caja3.style.backgroundColor = arrayToHex(colores[2]);
+        caja1.style.backgroundColor = arrayToHex(colores[0]);
+        caja2.style.backgroundColor = arrayToHex(colores[1]);
+        caja3.style.backgroundColor = arrayToHex(colores[2]);
+
+    }
 
 }
-
 /**
  *  
  * @method 
@@ -57,17 +61,3 @@ function arrayToHex(array) {
     }
     return nuevo;
 }
-
-
-const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', e => {
-    cursor.style.top = (e.pageY - 9) + "px";
-    cursor.style.left = (e.pageX - 7) + "px";
-})
-document.addEventListener('click', () => {
-    cursor.classList.add("expand");
-
-    setTimeout(() => {
-        cursor.classList.remove("expand");
-    }, 450)
-});

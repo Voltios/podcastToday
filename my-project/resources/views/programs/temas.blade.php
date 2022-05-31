@@ -4,15 +4,10 @@
 
     <div class="topics">
 
-        <div class="topic">
-            <div class="topic-image">123</div>
-            Tema1
-        </div>
-        <div class="topic">Tema2</div>
-        <div class="topic">Tema3</div>
-        <div class="topic">Tema4</div>
-        <div class="topic">Tema5</div>
-        <div class="topic">Tema6</div>
-        <div class="topic">Tema7</div>
+        @foreach ($categorias as $cat)
+            <div class="topic">{{ $cat->nombre }}
+                <a href="{{ route('progTema', $cat->nombre) }}"></a>
+            </div>
+        @endforeach
     </div>
 @endsection

@@ -18,4 +18,17 @@ class Programa extends Model
     {
         return $this->hasMany(User::class);
     }
+    public function categoria()
+    {
+        return $this->belongsToMany(Categoria::class, "programa_categoria");
+    }
+    public function attachCategorias($cat)
+    {
+        $this->categoria()->attach($cat);
+    }
+
+    public function detachCategorias($cat)
+    {
+        $this->categoria()->detach($cat);
+    }
 }

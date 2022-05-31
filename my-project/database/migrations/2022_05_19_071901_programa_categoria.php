@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriaUsuarioTable extends Migration
+class ProgramaCategoria extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCategoriaUsuarioTable extends Migration
      */
     public function up()
     {
-        Schema::create('categoria_usario', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedInteger("usuario_id");
+        Schema::create("programa_categoria", function (Blueprint $table) {
+            $table->bigIncrements("id");
+
+            $table->unsignedInteger("programa_id");
             $table->unsignedInteger("categoria_id");
-            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateCategoriaUsuarioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categoria_usario');
+        Schema::dropIfExists("programa_categoria");
     }
 }

@@ -35,7 +35,7 @@
                 <a href="{{ route('autores') }}"><span><i class="fa-solid fa-at"></i></span>Autores</a>
             </li>
             <li>
-                <a href="temas.html"><span><i class="fa-solid fa-message"></i></span>Temas</a>
+                <a href="{{ route('temas') }}"><span><i class="fa-solid fa-message"></i></span>Temas</a>
             </li>
             <!--
             <li>
@@ -64,7 +64,7 @@
         @else
             <ul class="nav-list-35 list">
                 <li class="">
-                    <a href="{{ route('profile') }}"><span><i
+                    <a href="{{ route('profile', Auth::id()) }}"><span><i
                                 class="fa-solid fa-user"></i>{{ Auth::user()->name }}</span></a>
                 </li>
             </ul>
@@ -85,7 +85,8 @@
         @yield('perfil')
         @yield('login')
         @yield('programa')
-
+        @yield('progTema')
+        @yield('episodios')
     </main>
     <footer>
 
@@ -96,8 +97,9 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
-    <script src="{{ asset('js/navbar.js') }}"></script>
     <script src="{{ asset('js/thief.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
+    <script src="{{ asset('js/cursor.js') }}"></script>
 
 </body>
 

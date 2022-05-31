@@ -9,7 +9,11 @@ use App\Models\Programa;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use ProgramaCategoria;
 
 class PagesController extends Controller
 {
@@ -23,14 +27,15 @@ class PagesController extends Controller
 
     public function autores()
     {
-        $autores = Autor::all();
+        $autores = User::all();
 
-        return view("autores", compact("autores"));
+        return view("programs.autores", compact("autores"));
     }
+
     public function temas()
     {
         $categorias = Categoria::all();
-        return view("temas", compact("categorias"));
+        return view("programs.temas", compact("categorias"));
     }
 
     public function programa($id)
@@ -42,5 +47,17 @@ class PagesController extends Controller
 
     // UPDATE Users SET descripcion = $fdesc where id = Auth::user()->id;
 
+    public function profile($id)
+    {
+        $user = User::findOrFail($id);
+        Log::info("entra en perfil " . $user->name);
+        $programas = Programa::where("user_id", $id)->get();
+        return view('profile', compact('user', 'programas'));
+    }
 
+    public function progTema($nombre)
+    {
+        $programas = Programa::all();
+        return view("programs.progTema", compact("programas"));
+    }
 }
