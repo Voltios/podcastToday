@@ -39,8 +39,8 @@ class UserController extends Controller
             $programa->descripcion = $req->fdesc;
             $programa->user_id = Auth::id();
             $programa->puntuacion = 0;
-            $programa->created_at = time();
-            $programa->updated_at = time();
+            $programa->created_at = now();
+            $programa->updated_at = now();
 
             $programa->save();
             $programa->attachCategorias($req->categorias);

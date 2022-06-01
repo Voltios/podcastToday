@@ -10,6 +10,6 @@ class Categoria extends Model
     use HasFactory;
 
     public function programas(){
-        return $this->belongsToMany(Programa::class, "categoria_id");
+        return $this->belongsToMany(Programa::class, "programa_categoria");
     }
 }

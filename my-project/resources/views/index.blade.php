@@ -82,6 +82,7 @@
 
         @yield('inicio')
         @yield('temas')
+        @yield('autores')
         @yield('perfil')
         @yield('login')
         @yield('programa')

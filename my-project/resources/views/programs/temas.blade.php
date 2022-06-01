@@ -6,8 +6,8 @@
 
         @foreach ($categorias as $cat)
             <div class="topic">{{ $cat->nombre }}
-                <a href="{{ route('progTema', $cat->nombre) }}"></a>
+                <a href="{{ route('progTema', $cat->nombre) }}">ESto</a>
             </div>
-        @endforeach
+        @endforeach 
     </div>
 @endsection

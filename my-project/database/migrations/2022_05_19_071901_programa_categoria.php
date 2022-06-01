@@ -18,6 +18,7 @@ class ProgramaCategoria extends Migration
 
             $table->unsignedInteger("programa_id");
             $table->unsignedInteger("categoria_id");
+            $table->timestamps();
         });
     }
 

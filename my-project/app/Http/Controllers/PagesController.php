@@ -28,8 +28,8 @@ class PagesController extends Controller
     public function autores()
     {
         $autores = User::all();
-
-        return view("programs.autores", compact("autores"));
+        $autores = DB::table('users')->get();
+        return view("programs.autores", ['autores' => $autores]);
     }
 
     public function temas()
@@ -50,7 +50,7 @@ class PagesController extends Controller
     public function profile($id)
     {
         $user = User::findOrFail($id);
-        Log::info("entra en perfil " . $user->name);
+        Log::info("entra en perfil $user->name");
         $programas = Programa::where("user_id", $id)->get();
         return view('profile', compact('user', 'programas'));
     }
@@ -58,6 +58,14 @@ class PagesController extends Controller
     public function progTema($nombre)
     {
         $programas = Programa::all();
-        return view("programs.progTema", compact("programas"));
+        $categorias = Categoria::where("nombre", $nombre)->get();
+        /* HACER EL SELECT DE LOS QUE TENGAN LA CATEGORIA CON EL MISMO NOMBRE */
+        return view("programs.progTema", compact("programas", "categorias"));
+    }
+
+    public function votar($userId, $progId)
+    {
+        $programa = 
+        return view('programs.infoPd');
     }
 }

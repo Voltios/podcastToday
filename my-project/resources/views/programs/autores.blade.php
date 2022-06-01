@@ -3,11 +3,11 @@
     <h1>Descubrir autores</h1>
 
     <div class="authors">
-
         @foreach ($autores as $autor)
             <div class="author">
-                <div class="author-image">{{ $autor }}</div>
-                {{$autor->name}}
+                {{ var_dump($autor) }}
+                <a href="{{ route('profile', $autor->id) }}">{{ $autor->name }}</a>
+
             </div>
 
             <div class="author">Autorr</div>

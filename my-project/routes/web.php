@@ -53,3 +53,5 @@ Route::post("anyadirEp", [UserController::class, "formAnyadir"])->name("anyadirE
 Route::get('editarEps/{id}', [UserController::class, "editarEpisodios"])->name('editarEps');
 Route::put("editarEp/{id}", [UserController::class, "formEditar"])->name('editarEp');
 Route::delete("eliminarEps/{id}", [UserController::class, "borrarEps"])->name("eliminarEps");
+
+Route::post("votar", [PagesController::class, 'votar'])->name("votar");
