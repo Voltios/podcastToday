@@ -19,6 +19,6 @@ services:
       - DB_DATABASE=bitnami_myapp
     volumes:
       # - './my-project:/app'
-      - 'MyExternalStorage:/app'
+      - '${WEBAPP_STORAGE_HOME}:/app'
     depends_on:
       - mariadb
