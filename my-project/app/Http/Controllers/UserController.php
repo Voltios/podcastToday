@@ -110,7 +110,7 @@ class UserController extends Controller
             $ep->created_at = now();
             $ep->updated_at = now();
             $ep->save();
-            Log::info("Episodio nsertado correctamente");
+            Log::info("Episodio insertado correctamente");
 
             return back()->with("mensaje", "Episodio insertado con éxito");
         } catch (Exception $e) {
@@ -119,10 +119,10 @@ class UserController extends Controller
         }
     }
 
-    public function editarEps($id)
+    public function editarEpisodios($id)
     {
         $ep = Episodio::findOrFail($id);
-        return view("programs.editar", compact("ep"));
+        return view("episodes.editar", compact("ep"));
     }
 
     public function formEditar(Request $req, $id)
@@ -146,11 +146,12 @@ class UserController extends Controller
         }
     }
 
-    public function borrarEps($id, $progId)
+    public function borrarEps($id)
     {
         $borrar = Episodio::findOrFail($id);
         $borrar->delete();
-        $programa = Programa::findOrFail($progId);
-        return view("episodes.infoEp", compact("programa"));
+        // $programa = Programa::findOrFail($progId);
+        Log::info("Episodio con id $id eliminado correctamente.");
+        return back()->with("mensaje", "Episodio eliminado");
     }
 }
