@@ -65,7 +65,7 @@ class PagesController extends Controller
 
     public function votar($userId, $progId)
     {
-        $programa = 
-        return view('programs.infoPd');
+        $programa = Programa::findOrFail($progId);
+        return view('programs.infoPd', compact('programa'));
     }
 }
