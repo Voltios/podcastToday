@@ -9,6 +9,9 @@
         <label for="descripcion">Descripción
             <input type="text" name="descripcion">
         </label>
+        <label for="url">Url al episodio
+            <input type="text" name="url">
+        </label>
         <button type="submit" class="btn">Enviar</button>
     </form>
 @endsection

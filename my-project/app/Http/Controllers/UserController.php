@@ -39,6 +39,7 @@ class UserController extends Controller
             $programa->descripcion = $req->fdesc;
             $programa->user_id = Auth::id();
             $programa->puntuacion = 0;
+            $programa->url = $req->furl;
             $programa->created_at = now();
             $programa->updated_at = now();
 
@@ -99,13 +100,16 @@ class UserController extends Controller
 
         $req->validate([
             "nombre" => "required",
-            "descripcion" => "required"
+            "descripcion" => "required",
+            "url" =>"required"
+
         ]);
         try {
 
             $ep = new Episodio;
             $ep->nombre = $req->nombre;
             $ep->descripcion = $req->descripcion;
+            $ep->url = $req->url;
             $ep->program_id = Auth::id();
             $ep->created_at = now();
             $ep->updated_at = now();

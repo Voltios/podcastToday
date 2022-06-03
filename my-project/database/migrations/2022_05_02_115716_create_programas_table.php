@@ -18,9 +18,9 @@ class CreateProgramasTable extends Migration
 
 
             $table->string("nombre");
-            $table->text("descripcion");
+            $table->longText("descripcion");
             $table->unsignedInteger("user_id");
-            
+            $table->string("url", 255);
             $table->integer("puntuacion");
             $table->timestamps();
         });

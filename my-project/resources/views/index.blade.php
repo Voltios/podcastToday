@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1.0, user-scalable=0">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -92,9 +92,9 @@
     <footer>
 
         <div class="colores">
-            <div id="c1">a</div>
-            <div id="c2">baa</div>
-            <div id="c3">c</div>
+            <div id="c1"></div>
+            <div id="c2"></div>
+            <div id="c3"></div>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>

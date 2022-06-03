@@ -37,6 +37,33 @@ if (img) {
         let caja1 = document.getElementById("c1");
         let caja2 = document.getElementById("c2");
         let caja3 = document.getElementById("c3");
+        let boton = document.getElementById("progRef");
+
+        boton.style.backgroundColor = arrayToHex(colores[0]);
+        boton.addEventListener('mouseenter', function() {
+            boton.style.boxShadow = "0 0 0 0";
+        });
+        boton.addEventListener('mouseleave', function() {
+            boton.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[1]);
+        });
+
+        boton.children[0].style.color = (getBrightness(arrayToHex(colores[0]))) ? "white" : "black";
+
+        boton.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[1]);
+
+
+
+        let aa = document.getElementById("externalLink");
+        aa.style.backgroundColor = arrayToHex(colores[0]);
+        aa.addEventListener('mouseenter', function() {
+            aa.style.boxShadow = "0 0 0 0";
+        });
+        aa.addEventListener('mouseleave', function() {
+            aa.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[2]);
+        });
+        aa.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[2]);
+        aa.children[0].style.color = (getBrightness(arrayToHex(colores[0]))) ? "white" : "black";
+
 
         caja1.style.backgroundColor = arrayToHex(colores[0]);
         caja2.style.backgroundColor = arrayToHex(colores[1]);
@@ -45,6 +72,22 @@ if (img) {
     }
 
 }
+
+function getBrightness(color) {
+    var c = color.substring(1); // strip #
+    var rgb = parseInt(c, 16); // convert rrggbb to decimal
+    var r = (rgb >> 16) & 0xff; // extract red
+    var g = (rgb >> 8) & 0xff; // extract green
+    var b = (rgb >> 0) & 0xff; // extract blue
+
+    var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+    console.log(luma);
+    if (luma > 128) {
+        return false;
+    } else return true;
+}
+
+
 /**
  *  
  * @method 
@@ -60,4 +103,12 @@ function arrayToHex(array) {
         // console.log(nuevo);
     }
     return nuevo;
+}
+
+let ext = document.getElementById("externalLink");
+if (ext) {
+
+    ext.addEventListener("click", function() {
+        alert("Estás saliendo de Podcast Today! Vuelve pronto");
+    });
 }

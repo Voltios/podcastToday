@@ -1,7 +1,5 @@
 @extends('index')
 @section('progTema')
-    ola
-
     @foreach ($categorias as $cat)
         @foreach ($cat->programas as $p)
             {{ $p->nombre }}

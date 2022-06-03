@@ -18,6 +18,7 @@ class CreateEpisodiosTable extends Migration
 
             // $table->unsignedInteger("idTemporada");
             $table->string("nombre");
+            $table->string("url");
             $table->text("descripcion");
             $table->unsignedInteger("program_id");
             $table->timestamps();
