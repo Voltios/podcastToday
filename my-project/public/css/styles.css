@@ -245,13 +245,6 @@ footer {
     font-weight: 400;
 }
 
-.podcast-content {
-    /* border: 2px dotted #515559; */
-    /* display: flex;
-    align-items: center;
-    justify-content: space-around; */
-}
-
 .nombreUsuario {
     font-size: 1em;
 }
@@ -274,11 +267,6 @@ footer {
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-.podcast-content img {
-    /* height: 300px;
-    width: 300px; */
 }
 
 .imgCover {
