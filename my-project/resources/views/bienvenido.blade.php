@@ -51,7 +51,7 @@
                     y así conseguir más oyentes.
                 </p>
                 <p class="text">
-                    Como usuario regular, verás cada semana un nuevo programa <span
+                    Como usuario regular, verás cada mes un nuevo programa <span
                         class="morao">destacado</span>, además de buscar entre la gran
                     variedad de programas diferentes que hay.
                 </p>

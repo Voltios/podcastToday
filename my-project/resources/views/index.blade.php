@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
-    <title>PodcastToday - Inicio</title>
+    <title>PodcastToday</title>
 </head>
 
 <div class="cursor" id="biCur"></div>
@@ -34,9 +34,9 @@
             <li>
                 <a href="{{ route('autores') }}"><span><i class="fa-solid fa-at"></i></span>Autores</a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="{{ route('temas') }}"><span><i class="fa-solid fa-message"></i></span>Temas</a>
-            </li>
+            </li> --}}
             <!--
             <li>
                 <select name="lang" id="">
@@ -59,13 +59,22 @@
                     <li class="register">
                         <a href="{{ route('register') }}"><span><i class="fa-solid fa-plus"></i></span>Registrarse</a>
                     </li>
+
                 </ul>
             @endif
         @else
             <ul class="nav-list-35 list">
                 <li class="">
-                    <a href="{{ route('profile', Auth::id()) }}"><span><i
-                                class="fa-solid fa-user"></i>{{ Auth::user()->name }}</span></a>
+                    <a class="nombreUsuario" href="{{ route('profile', Auth::id()) }}"><span><i
+                                class="fa-solid fa-user"></i>{{ Auth::user()->username }}</span></a>
+                </li>
+                <li>
+                    <a class="logout" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                        href="logg"><span> <i class="fa fa-power-off" aria-hidden="true"></i>Salir</span></a>
+                    <form action="{{ route('logout') }}" method="POST" id="logout-form">
+                        @csrf
+                    </form>
                 </li>
             </ul>
         @endguest

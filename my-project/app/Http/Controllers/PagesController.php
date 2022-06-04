@@ -44,8 +44,8 @@ class PagesController extends Controller
     public function temas()
     {
         $categorias = Categoria::all();
-        $programas = Programa::take(3)->get();
-        return view("programs.temas", compact("categorias",'programas'));
+        $todosProgramas = Programa::take(3)->get();
+        return view("programs.temas", compact("categorias",'todosProgramas'));
     }
 
     public function programa($id)
@@ -63,7 +63,8 @@ class PagesController extends Controller
         $user = User::findOrFail($id);
         Log::info("entra en perfil $user->name");
         $programas = Programa::where("user_id", $id)->get();
-        return view('profile', compact('user', 'programas'));
+        $todosProgramas = Programa::take(3)->get();
+        return view('profile', compact('user', 'programas', 'todosProgramas'));
     }
 
     public function progTema($nombre)

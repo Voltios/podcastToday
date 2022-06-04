@@ -12,7 +12,7 @@
                 {{ $programa->descripcion }}
             </p>
 
-            <h3>Valoración semanal <span class="puntuacion">{{ $programa->puntuacion }}</span></h3>
+            <h3>Valoración mensual <span class="puntuacion">{{ $programa->puntuacion }}</span></h3>
 
         </div>
         <div class="action-btns" id="progRef">

@@ -14,7 +14,7 @@
         <h2>También te puede gustar...</h2>
         <div class="temas_programas_container">
 
-            @foreach ($programas as $prog)
+            @foreach ($todosProgramas as $prog)
                 <a href="{{ route('programa', $prog->id) }}">
                     <div class="tema_prog">
                         <h3>{{ $prog->nombre }}</h3>

@@ -7,26 +7,29 @@
         <h2>Episodios:</h2>
         @foreach ($episodios as $ep)
             <div class="episodio">
-                <a href="{{ $ep->url }}" <p class="ep_nombre">{{ $ep->nombre }}</p></a>
+                <a href="{{ $ep->url }}"> <p class="ep_nombre">{{ $ep->nombre }}</p></a>
                 <p class="ep_descripcion">{{ $ep->descripcion }}</p>
             </div>
         @endforeach
         {{-- <div class="podcast-description">
             <p>{{ $programa->descripcion }}</p>
         </div> --}}
-        <p>{{ $programa->puntuacion }}</p>
+        <p>Puntuación mensual: <span class="puntuacion">{{ $programa->puntuacion }}</span></p>
+
         <form action="{{ route('votar', $programa->id) }}" method="POST">
             @csrf
-            <button type="submit">Votar +1</button>
+            <button class="botton" type="submit">Votar +1</button>
         </form>
     </div>
     @if (Auth::user() && $programa->user_id == Auth::user()->id)
-        <form action="{{ route('editarPrograma', $programa->id) }}">
-            <button type="submit" class="btn">Editar</button>
-        </form>
+        <div class="acciones">
+            <form action="{{ route('editarPrograma', $programa->id) }}">
+                <button type="submit" class="btn botton">Editar</button>
+            </form>
 
-        <form action="{{ route('modificarEpisodios', $programa->id) }}">
-            <button type="submit" class="btn">Modificar episodios</button>
-        </form>
+            <form action="{{ route('modificarEpisodios', $programa->id) }}">
+                <button type="submit" class="btn botton">Modificar episodios</button>
+            </form>
+        </div>
     @endif
 @endsection

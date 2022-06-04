@@ -38,33 +38,77 @@ if (img) {
         let caja2 = document.getElementById("c2");
         let caja3 = document.getElementById("c3");
         let boton = document.getElementById("progRef");
+        if (boton) {
 
-        boton.style.backgroundColor = arrayToHex(colores[0]);
-        boton.addEventListener('mouseenter', function() {
-            boton.style.boxShadow = "0 0 0 0";
-        });
-        boton.addEventListener('mouseleave', function() {
+            boton.style.backgroundColor = arrayToHex(colores[0]);
+            boton.addEventListener('mouseenter', function() {
+                boton.style.boxShadow = "0 0 0 0";
+            });
+            boton.addEventListener('mouseleave', function() {
+                boton.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[1]);
+            });
+
+            boton.children[0].style.color = (getBrightness(arrayToHex(colores[0]))) ? "white" : "black";
+
             boton.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[1]);
-        });
-
-        boton.children[0].style.color = (getBrightness(arrayToHex(colores[0]))) ? "white" : "black";
-
-        boton.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[1]);
+        }
 
 
 
         let aa = document.getElementById("externalLink");
-        aa.style.backgroundColor = arrayToHex(colores[0]);
-        aa.addEventListener('mouseenter', function() {
-            aa.style.boxShadow = "0 0 0 0";
-        });
-        aa.addEventListener('mouseleave', function() {
+        if (aa) {
+
+            aa.style.backgroundColor = arrayToHex(colores[0]);
+            aa.addEventListener('mouseenter', function() {
+                aa.style.boxShadow = "0 0 0 0";
+            });
+            aa.addEventListener('mouseleave', function() {
+                aa.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[2]);
+            });
             aa.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[2]);
-        });
-        aa.style.boxShadow = "5px 5px 0 " + arrayToHex(colores[2]);
-        aa.children[0].style.color = (getBrightness(arrayToHex(colores[0]))) ? "white" : "black";
+            aa.children[0].style.color = (getBrightness(arrayToHex(colores[0]))) ? "white" : "black";
+        }
+
+        let bottones = document.querySelectorAll('.botton');
+        if (bottones) {
+
+            bottones[0].style.backgroundColor = arrayToHex(colores[0]);
+            bottones[0].addEventListener('mouseenter', () => {
+                bottones[0].style.backgroundColor = arrayToHex(colores[1]);
+                bottones[0].style.color = (getBrightness(arrayToHex(colores[1]))) ? "white" : "black";
+            });
+            bottones[0].addEventListener('mouseleave', () => {
+                bottones[0].style.backgroundColor = arrayToHex(colores[0]);
+                bottones[0].style.color = (getBrightness(arrayToHex(colores[0]))) ? "white" : "black";
+            });
+            bottones[0].style.color = (getBrightness(arrayToHex(colores[0]))) ? "white" : "black";
+
+            if (bottones.length > 1) {
+                bottones[1].style.backgroundColor = arrayToHex(colores[1]);
+                bottones[1].addEventListener('mouseenter', () => {
+                    bottones[1].style.backgroundColor = arrayToHex(colores[2]);
+                    bottones[1].style.color = (getBrightness(arrayToHex(colores[2]))) ? "white" : "black";
+                });
+                bottones[1].addEventListener('mouseleave', () => {
+                    bottones[1].style.backgroundColor = arrayToHex(colores[1]);
+                    bottones[1].style.color = (getBrightness(arrayToHex(colores[1]))) ? "white" : "black";
+                });
+                bottones[1].style.color = (getBrightness(arrayToHex(colores[1]))) ? "white" : "black";
 
 
+                bottones[2].style.backgroundColor = arrayToHex(colores[2]);
+                bottones[2].addEventListener('mouseenter', () => {
+                    bottones[2].style.backgroundColor = arrayToHex(colores[0]);
+                    bottones[2].style.color = (getBrightness(arrayToHex(colores[0]))) ? "white" : "black";
+                });
+                bottones[2].addEventListener('mouseleave', () => {
+                    bottones[2].style.backgroundColor = arrayToHex(colores[2]);
+                    bottones[2].style.color = (getBrightness(arrayToHex(colores[2]))) ? "white" : "black";
+                });
+                bottones[2].style.color = (getBrightness(arrayToHex(colores[2]))) ? "white" : "black";
+            }
+
+        }
         caja1.style.backgroundColor = arrayToHex(colores[0]);
         caja2.style.backgroundColor = arrayToHex(colores[1]);
         caja3.style.backgroundColor = arrayToHex(colores[2]);

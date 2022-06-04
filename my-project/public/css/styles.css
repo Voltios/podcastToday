@@ -8,6 +8,12 @@
     --amarillo: #F4D7B8;
     --lila: #ff9980;
     --verde: #AAA2F2;
+    /* -------- */
+    --azul2: #EE5873;
+    --oscuro: #3B999B;
+    --blanco3: #ffffff;
+    --blanco4: #F6F7FC;
+    --naranja: #5778A3;
 }
 
 :root.dark {
@@ -246,6 +252,10 @@ footer {
     justify-content: space-around; */
 }
 
+.nombreUsuario {
+    font-size: 1em;
+}
+
 .podcast-description {
     margin: 20px;
     font-size: 1.2em;
@@ -360,7 +370,7 @@ h2 {
 .topic {
     height: 150px;
     width: 200px;
-    background-color: var(--verde);
+    background-color: var(--naranja);
     margin: 10px;
     border-radius: 15px;
     display: flex;
@@ -372,18 +382,20 @@ h2 {
 
 .topicRef {
     padding: 10px;
-    background-color: var(--blanco);
+    background-color: #33537c;
     margin: 0 30px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: -2px -2px 4px #ffffff, 2px 2px 4px #bbc3cc;
-    transition: .13s box-shadow ease-in-out;
-    color: var(--negro);
+    /* box-shadow: -2px -2px 2px #ffffff, 2px 2px 2px #bbc3cc; */
+    transition: .13s all ease-in-out;
+    color: var(--blanco3);
+    letter-spacing: 2px;
 }
 
 .topicRef:hover {
     /* transform: translate(2px, 2px); */
-    box-shadow: -2px -2px 4px #ffffff inset, 2px 2px 4px #bbc3cc inset;
+    background-color: var(--azul2);
+    /* box-shadow: -2px -2px 2px #ffffff inset, 2px 2px 2px #bbc3cc inset; */
 }
 
 .temas_programas {
@@ -433,4 +445,122 @@ h2 {
     .topics {
         height: 1000px;
     }
+    .temas_programas_container {
+        /* display: flex; */
+        flex-direction: column;
+    }
+}
+
+.addProgram {
+    padding: 5px 10px;
+    background-color: var(--naranja);
+    color: var(--blanco3);
+    font-size: 1.2em;
+    transition: all .2s ease;
+    border: none;
+    margin: 7px;
+}
+
+.addProgram:hover {
+    border-radius: 10px;
+    background-color: var(--azul2);
+}
+
+.botton {
+    margin: 10px;
+    border: none;
+    width: 250px;
+    padding: 20px;
+    transition: all .2s ease;
+    font-size: 1.15em;
+}
+
+.botton:hover {
+    border-radius: 10px;
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+}
+
+.programa_creador {
+    margin: 20px;
+    display: flex;
+    border-bottom: 1px solid #5778A3;
+}
+
+.nombre_programa_creador {
+    text-align: left;
+    padding: 20px;
+    background-color: var(--naranja);
+    width: max-content;
+    transition: .2s all ease;
+}
+
+.nombre_programa_creador a {
+    color: var(--negro);
+}
+
+.nombre_programa_creador:hover {
+    background-color: var(--azul2);
+    border-top-left-radius: 10px;
+}
+
+.descripcion_programa_creador {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.btn-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.anyadirr {
+    margin: 50px;
+    padding: 10px 15px;
+    background-color: var(--oscuro);
+    transition: all .2s ease;
+    color: var(--blanco3);
+    font-size: 1.2em;
+}
+
+.anyadirr:hover {
+    border-radius: 7px;
+    background-color: var(--azul2);
+}
+
+.authors {
+    display: flex;
+    height: 75vh;
+    width: 50%;
+    margin: 50px auto;
+}
+
+.author {
+    text-align: left;
+    height: max-content;
+    padding: 20px;
+    border-bottom: 2px solid var(--naranja);
+    margin: 10px;
+    width: 100%;
+}
+
+.author_name {
+    color: var(--negro);
+    margin-right: 20px;
+}
+
+.author:hover {
+    border-color: var(--azul2);
+}
+
+.main-perfil {
+    height: 90vh;
+    width: 80vw;
+    margin: 0 auto;
 }
