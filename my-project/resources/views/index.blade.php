@@ -34,9 +34,9 @@
             <li>
                 <a href="{{ route('autores') }}"><span><i class="fa-solid fa-at"></i></span>Autores</a>
             </li>
-            {{-- <li>
+            <li>
                 <a href="{{ route('temas') }}"><span><i class="fa-solid fa-message"></i></span>Temas</a>
-            </li> --}}
+            </li>
             <!--
             <li>
                 <select name="lang" id="">
@@ -45,10 +45,10 @@
                     <option value="CA">Catalán / Valenciano</option>
                 </select>
             </li> -->
-            <li>
+            {{-- <li>
                 <a id="themeChanger"><span><i class="fa-solid fa-moon"></i></span></a>
                 <!-- <img src="Grupo 30.svg" alt="lunica" height="20"> -->
-            </li>
+            </li> --}}
         </ul>
         @guest
             @if (Route::has('login'))
