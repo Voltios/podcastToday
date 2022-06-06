@@ -3,10 +3,6 @@
 @section('perfil')
     <div class="main-perfil">
         <h1 class="h1 title">{{ $user->name }}</h1>
-
-
-
-
         @if (Auth::id() == $user->id)
             <a class="addProgram" href="{{ route('crearProg') }}">Añadir un programa</a>
         @endif
