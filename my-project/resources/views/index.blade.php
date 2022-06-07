@@ -24,18 +24,22 @@
 <div class="cursor" id="biCur"></div>
 
 <body class="light">
-
+    
+    <div class="e"></div>
     <nav class="light" id="navbar">
+        <div class="la">
+            <i class="fa fa-angles-down" id="flecha" aria-hidden="true"></i>
+        </div>
         <ul class="actions nav-list-65 list">
             <li>
                 <a class="light" href="{{ route('home') }}"><span><i
-                            class="fa-solid fa-microphone"></i></span>Descubrir</a>
+                            class="fa-solid fa-star"></i></span>Destacado</a>
             </li>
             <li>
                 <a href="{{ route('autores') }}"><span><i class="fa-solid fa-at"></i></span>Autores</a>
             </li>
             <li>
-                <a href="{{ route('temas') }}"><span><i class="fa-solid fa-message"></i></span>Temas</a>
+                <a href="{{ route('temas') }}"><span><i class="fa-solid fa-message"></i></span>Categorías</a>
             </li>
             <!--
             <li>
@@ -45,10 +49,11 @@
                     <option value="CA">Catalán / Valenciano</option>
                 </select>
             </li> -->
-            {{-- <li>
-                <a id="themeChanger"><span><i class="fa-solid fa-moon"></i></span></a>
+            <li>
+                <a href="{{ route('programas') }}" id=""><span><i
+                            class="fa-solid fa-microphone"></i></span>Descubrir</a>
                 <!-- <img src="Grupo 30.svg" alt="lunica" height="20"> -->
-            </li> --}}
+            </li>
         </ul>
         @guest
             @if (Route::has('login'))
@@ -97,6 +102,7 @@
         @yield('programa')
         @yield('progTema')
         @yield('episodios')
+        @yield('listaPrgs')
     </main>
     <footer>
 

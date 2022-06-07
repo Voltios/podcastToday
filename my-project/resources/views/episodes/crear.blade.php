@@ -1,11 +1,11 @@
 @extends('forms')
 @section('crearEp')
-    @if (session('mensaje'))
-        <div class="mensaje-prog">
-            {{ session('mensaje') }}
-        </div>
-    @endif
     <div class="form-container crearProg">
+        @if (session('mensaje'))
+            <div class="mensaje-prog">
+                {{ session('mensaje') }}
+            </div>
+        @endif
         <h1>Insertar episodio en {{ $programa->nombre }}</h1>
         <form action="{{ route('anyadirEp') }}" method="POST">
             @csrf
@@ -19,7 +19,10 @@
             <label for="url">Url al episodio</label><br>
             <input type="text" name="url">
             <br>
+            {{Form::hidden('prog_id', $programa->id)}}
+            {{-- <input type="hidden" value="{{$programa->id}}" name="prog_id"> --}}
             <button type="submit" class="btn enviar">Enviar</button>
         </form>
+        <a class="pa login" href="{{ route('home') }}">Volver al inicio</a>
     </div>
 @endsection

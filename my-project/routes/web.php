@@ -27,6 +27,8 @@ Route::get("autores", [PagesController::class, "autores"])->name("autores");
 // Route::get("autor/{id}", [PagesController::class, "autor"])->name("autor");
 Route::get('programs/{id}', [PagesController::class, "programa"])->name('programa');
 
+
+Route::get('programas', [PagesController::class, 'programas'])->name('programas');
 Route::get("temas", [PagesController::class, 'temas'])->name("temas");
 Route::get("progTema/{nombre}", [PagesController::class, 'progTema'])->name('progTema');
 

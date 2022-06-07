@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+
 use App\Models\Categoria;
 use App\Models\Episodio;
 use App\Models\Programa;
@@ -10,6 +12,9 @@ use GuzzleHttp\Handler\Proxy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Goutte\Client;
+use Symfony\Component\HttpClient\HttpClient;
+use GuzzleHttp\Client as GuzzleHttpClient;
 
 class UserController extends Controller
 {
@@ -29,10 +34,14 @@ class UserController extends Controller
     public function crearProg()
     {
         $cat = Categoria::all();
+        
         return view("programs.crear", compact("cat"));
     }
     public function crear(Request $req)
     {
+
+
+
         try {
             $programa = new Programa;
             $programa->nombre = $req->fnom;
@@ -42,6 +51,8 @@ class UserController extends Controller
             $programa->url = $req->furl;
             $programa->created_at = now();
             $programa->updated_at = now();
+
+
 
             $programa->save();
             $programa->attachCategorias($req->categorias);
@@ -101,7 +112,7 @@ class UserController extends Controller
         $req->validate([
             "nombre" => "required",
             "descripcion" => "required",
-            "url" =>"required"
+            "url" => "required"
 
         ]);
         try {
@@ -110,7 +121,11 @@ class UserController extends Controller
             $ep->nombre = $req->nombre;
             $ep->descripcion = $req->descripcion;
             $ep->url = $req->url;
-            $ep->program_id = Auth::id();
+
+            // $ep->program_id = Auth::id();
+            $ep->program_id = $req->prog_id;
+            
+
             $ep->created_at = now();
             $ep->updated_at = now();
             $ep->save();

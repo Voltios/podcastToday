@@ -3,7 +3,7 @@
     <div class="form-container crearProg">
         <h2 class="title">Editar programa</h2>
         @if (session('mensaje'))
-            <div class="mensaje">
+            <div class="mensaje-prog">
                 <p>{{ session('mensaje') }}</p>
             </div>
         @endif

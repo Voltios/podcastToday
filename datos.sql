@@ -2,30 +2,30 @@ insert INTO programas
 values (
         null,
         "Gent amb trellat",
-        "Un podcast de Nerea Pedrón i Gema Dalia.",
+        "Un podcast de Nerea Pedron i Gema Dalia.",
         1,
         "https://open.spotify.com/show/3xKLNISLH2jtZ10smgCTmz",
-        100,
+        0,
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP
     ),
     (
         null,
         "DesVARiando",
-        "Bienvenidos a DesVARiando, un programa en el que se analiza el fútbol de manera rigurosa, o al igual no tanto....",
+        "Bienvenidos a DesVARiando, un programa en el que se analiza el futbol de manera rigurosa, o al igual no tanto....",
         2,
         "https://open.spotify.com/show/0XctocTbaR5tHbDcJAJCmf",
-        20,
+        0,
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP
     ),
     (
         null,
-        "The elden ring podcast",
-        "Discussing Elden Ring. News, analysis, speculation and more. Produced by Albert Chessa.",
-        2,
-        "https://open.spotify.com/show/21qLcBwJdIi7A989louJUb",
-        80,
+        "Entiende tu mente",
+        "Entiende Tu Mente es un podcast de psicologia que, de una manera amena, te cuenta como funciona nuestra mente.",
+        3,
+        "https://open.spotify.com/show/0sGGLIDnnijRPLef7InllD?si=b79e09b8c8df434a",
+        0,
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP
     );
@@ -59,6 +59,18 @@ values (
         "tecnologia",
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP
+    ),
+    (
+        null,
+        'salud',
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        null,
+        'talk-show',
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
     );
 insert into programa_categoria
 values (null, 1, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
@@ -78,7 +90,7 @@ VALUES(
     ),
     (
         null,
-        "Capítol 02/T1 - Teletransport involuntari",
+        "Capitol 02/T1 - Teletransport involuntari",
         "https://open.spotify.com/episode/5KxIhZwFpxXtnHjX5VDLtl",
         "Que esta passant entre Polonia i Bielorrusia? Pablo Casado ha gastat la porta magica de Doraemon i s.ha teletransportat involuntariament a la misa en honor a Franco! Els pijos madrilenys ataquen de nou i Esperanza Gracia ens dona la bona nit per Twitter.",
         1,

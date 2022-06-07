@@ -26,7 +26,7 @@
             <label for="furl">Enlace al programa
                 <input type="url" name="furl" placeholder="https://www.ejemplo.com">
             </label>
-
+            
             <div class="cat_container">
                 <label for="">Categorias</label>
                 <br>

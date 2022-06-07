@@ -151,6 +151,7 @@ h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 3em;
     width: 100%;
+    text-transform: capitalize;
 }
 
 
@@ -201,7 +202,8 @@ footer {
     display: flex;
     height: 50px;
     bottom: 0;
-    position: absolute;
+    /* position: ; */
+    background-color: var(--blanco);
     margin: 0;
     align-items: center;
     width: 100vw;
@@ -345,47 +347,6 @@ h2 {
     align-items: center;
 }
 
-.topics {
-    margin: 35px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    /* align-items: center; */
-    justify-content: space-evenly;
-    height: 600px;
-}
-
-.topic {
-    height: 150px;
-    width: 200px;
-    background-color: var(--naranja);
-    margin: 10px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: center;
-    text-transform: capitalize;
-}
-
-.topicRef {
-    padding: 10px;
-    background-color: #33537c;
-    margin: 0 30px;
-    text-align: center;
-    border-radius: 10px;
-    /* box-shadow: -2px -2px 2px #ffffff, 2px 2px 2px #bbc3cc; */
-    transition: .13s all ease-in-out;
-    color: var(--blanco3);
-    letter-spacing: 2px;
-}
-
-.topicRef:hover {
-    /* transform: translate(2px, 2px); */
-    background-color: var(--azul2);
-    /* box-shadow: -2px -2px 2px #ffffff inset, 2px 2px 2px #bbc3cc inset; */
-}
-
 .temas_programas {
     /* position: absolute;
     
@@ -423,12 +384,49 @@ h2 {
     content: "🎤";
 }
 
+.e {
+    height: 40px;
+    margin-bottom: 20px;
+}
 
-/*móvil*/
+@media (min-width: 551px) {
+    .e {
+        display: none;
+    }
+    .fa-angles-down {
+        display: none;
+    }
+}
+
+.fa-angles-down {
+    width: max-content;
+    transition: .2s all ease;
+}
+
+.la {
+    text-align: right;
+    padding-right: 15px;
+}
+
+.la i {
+    margin: 0;
+}
+
+
+/* movil */
 
 @media (max-width: 550px) {
-    nav {
+    .cursor {
         display: none;
+    }
+    nav {
+        padding-top: 15px;
+        position: fixed;
+        top: 0;
+        height: 50px;
+        width: 100vw;
+        display: flex;
+        margin-top: 0px;
     }
     .topics {
         height: 1000px;
@@ -436,6 +434,31 @@ h2 {
     .temas_programas_container {
         /* display: flex; */
         flex-direction: column;
+    }
+    h1 {
+        margin-top: 20px;
+    }
+    .fa-angles-down {
+        font-size: 1.5em;
+        color: var(--negro);
+        text-align: right;
+        margin-top: -40px;
+        margin-right: 20px;
+    }
+    .infoEp {
+        margin-top: 85px;
+    }
+    .colores {
+        /* display: none; */
+    }
+    .episodio {
+        flex-direction: column;
+        border-bottom: 1px solid var(--negro);
+        border-radius: 0;
+        text-align: center;
+    }
+    .ep_nombre {
+        border: none;
     }
 }
 
@@ -552,3 +575,122 @@ h2 {
     width: 80vw;
     margin: 0 auto;
 }
+
+.lista_container {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 80vh;
+}
+
+.lista_programa {
+    margin: 20px;
+    height: max-content;
+}
+
+.lista_programa p {
+    color: var(--negro);
+}
+
+.lista_programa img {
+    height: 200px;
+    width: 200px;
+    filter: grayscale(50%);
+    transition: all .25s ease-in-out;
+}
+
+.lista_programa:hover img {
+    filter: grayscale(0);
+    border-radius: 20px;
+}
+
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 60vh;
+    justify-content: center;
+    max-width: 70vw;
+    margin: 20px auto 0;
+}
+
+.deportes {
+    background-image: url('https://s03.s3c.es/imag/_v0/770x420/5/9/d/700x420_deportes.jpg');
+}
+
+.topic span {
+    background-color: var(--blanco);
+    padding: 5px;
+    color: var(--negro);
+    transition: .2s all ease-in-out;
+}
+
+.actualidad {
+    background-image: url('https://www.filco.es/uploads/2020/08/Dosier-Hegel.jpg');
+}
+
+.musica {
+    background-image: url('https://d7lju56vlbdri.cloudfront.net/var/ezwebin_site/storage/images/_aliases/img_1col/en-exclusiva/programados/la-musica-de-fondo-podria-mejorar-la-memoria-en-el-alzheimer-o-deterioro-cognitivo/9208472-2-esl-MX/La-musica-de-fondo-podria-mejorar-la-memoria-en-el-alzheimer-o-deterioro-cognitivo.jpg');
+}
+
+.videojuegos {
+    background-image: url('https://www.at-languagesolutions.com/wp-content/uploads/2019/06/localizaci%C3%B3n-de-videojuegos.jpg');
+}
+
+.tecnologia {
+    background-image: url('https://www.wipo.int/export/sites/www/shared/images/socialmedia/tech_trends_getty_869833972_16-9_hq_1200.png');
+}
+
+.talk-show {
+    background-image: url('https://media.istockphoto.com/vectors/talk-show-with-female-celebrity-flat-vector-illustration-vector-id1387056443?k=20&m=1387056443&s=612x612&w=0&h=UYXIS-sU8nPnzZwS_dIWs2RiNumndoUqmvniMK-X5t4=');
+}
+
+.literatura {
+    background-image: url('https: //img.freepik.com/vector-gratis/imagenes-concepto-literatura-libros-dibujos-mano-vintage-diferentes-herramientas-escritores_80590-2697.jpg');
+}
+
+.salud {
+    background-image: url('https://www.osakidetza.euskadi.eus/contenidos/informacion/osk_osaesk_cuida_durant_covid/es_def/images/osakidetza-salud-emocional-covid-19.png');
+}
+
+.topic {
+    height: 150px;
+    width: 200px;
+    background-color: var(--naranja);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    text-transform: capitalize;
+    filter: grayscale(50%);
+    transition: .2s all ease-in-out;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.topic:hover {
+    filter: grayscale(0);
+}
+
+.topic:hover span {
+    /* background-color: var(--azul2); */
+    padding: 20px;
+}
+
+
+/* 
+.topicRef {
+    padding: 10px;
+    background-color: #33537c;
+    margin: 0 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: -2px -2px 2px #ffffff, 2px 2px 2px #bbc3cc;
+    transition: .13s all ease-in-out;
+    color: var(--blanco3);
+    letter-spacing: 2px;
+} */

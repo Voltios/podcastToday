@@ -4,9 +4,11 @@
 
     <div class="topics">
         @foreach ($categorias as $cat)
-            <div class="topic">{{ $cat->nombre }}
-                <a class="topicRef" href="{{ route('progTema', $cat->nombre) }}">IR</a>
-            </div>
+            <a class="topicRef" href="{{ route('progTema', $cat->nombre) }}">
+                <div class="topic {{ $cat->nombre }}">
+                    <span>{{ $cat->nombre }}</span>
+                </div>
+            </a>
         @endforeach
     </div>
 

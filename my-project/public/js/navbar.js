@@ -1,20 +1,22 @@
 let navegador = document.getElementById("navbar");
 
-let nWidth = navegador.style.width;
 
 console.log(navegador.children);
 
+if (window.innerWidth > 551) {
 
+    let nWidth = navegador.style.width;
 
-navegador.addEventListener("mouseenter", () => {
-    navegador.style.width = "300px";
+    navegador.addEventListener("mouseenter", () => {
+        navegador.style.width = "300px";
 
-});
+    });
 
-navegador.addEventListener("mouseleave", () => {
-    navegador.style.width = nWidth;
-});
+    navegador.addEventListener("mouseleave", () => {
+        navegador.style.width = nWidth;
+    });
 
+}
 
 
 
@@ -70,8 +72,8 @@ if (img) {
         }
 
         let bottones = document.querySelectorAll('.botton');
-        if (bottones) {
 
+        if (bottones) {
             bottones[0].style.backgroundColor = arrayToHex(colores[0]);
             bottones[0].addEventListener('mouseenter', () => {
                 bottones[0].style.backgroundColor = arrayToHex(colores[1]);
@@ -155,4 +157,22 @@ if (ext) {
     ext.addEventListener("click", function() {
         alert("Estás saliendo de Podcast Today! Vuelve pronto");
     });
+}
+
+
+if (window.innerWidth < 550) {
+
+    navegador.addEventListener('click', function(e) {
+        navegador.toggleAttribute('abierto');
+        let flecha = document.getElementById('flecha');
+
+        if (navegador.hasAttribute('abierto') && flecha) {
+            flecha.style.transform = "rotate(180deg)";
+            navegador.style.height = "90vh";
+        } else {
+            flecha.style.transform = "rotate(0deg)";
+            navegador.style.height = "50px";
+        }
+    });
+
 }

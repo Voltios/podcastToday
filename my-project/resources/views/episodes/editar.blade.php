@@ -1,5 +1,6 @@
 @extends('forms')
 @section('crearEp')
+
     <div class="form-container crearProg">
         <h1>Editar episodio {{ $ep->nombre }}</h1>
         <form action="{{ route('editarEp', $ep->id) }}" method="POST">

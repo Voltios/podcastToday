@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Programa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/', function () {
+    return response()->json([
+     'info' => 'Bienvenido a mi aplicacion!'
+    ]);
+});
+
+Route::get('home', function(){
+    return Programa::orderByDesc('puntuacion')->limit(1)->get();
+});
+Route::get('programas', function () {
+    return Programa::all();
+});
+
+Route::get('programa/{id}', function ($id) {
+    return Programa::findOrFail($id);
 });

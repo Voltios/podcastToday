@@ -83,4 +83,10 @@ class PagesController extends Controller
         $programa->save();
         return back();
     }
+
+    public function programas(){
+        // $progs = Programa::paginate(10);
+        $progs = Programa::all();
+        return view('programs.listaProgramas', compact('progs'));
+    }
 }

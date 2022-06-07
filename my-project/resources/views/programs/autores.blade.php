@@ -5,8 +5,8 @@
     <div class="authors">
         @foreach ($autores as $autor)
             <div class="author">
-                <span>{{ $autor->name }}</span>
-                <a class="author_name" href="{{ route('profile', $autor->id) }}"></a>
+                
+                <a class="author_name" href="{{ route('profile', $autor->id) }}"><span>{{ $autor->name }}</span></a>
                 <span class="author_desc">{{ $autor->descripcion }}</span>
             </div>
         @endforeach

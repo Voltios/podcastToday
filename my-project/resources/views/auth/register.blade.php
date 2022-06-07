@@ -2,7 +2,11 @@
 
 @section('register')
     <div class="form-container registro">
-
+        @if (session('mensaje'))
+            <div class="mensaje-prog">
+                {{ session('mensaje') }}
+            </div>
+        @endif
         <h1 class="card-header">Registro</h1>
 
 
@@ -44,7 +48,8 @@
 
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                     name="password" required autocomplete="new-password">
-                    <span id="ojo" ><button class="ojo"><i class="fa fa-eye" aria-hidden="true"></i></button></span>
+                <span id="ojo"><button class="ojo"><i class="fa fa-eye"
+                            aria-hidden="true"></i></button></span>
                 @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
