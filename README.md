@@ -48,3 +48,4 @@ This project was made as a School project, so all content and licensing remains 
 
 Feel free to contribute, report issues, or suggest improvements!
 ```
+Made with 🩷 and ☕ by Alesvolta
